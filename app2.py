@@ -1,9 +1,14 @@
 from flask import Flask, session, render_template, request
 
 
+
 app2 = Flask(__name__)
 app2.secret_key = "123"
 
+# uncomment the 3 lines below to use server file sessions
+# from flask_session import Session
+#app2.config['SESSION_TYPE'] = 'filesystem'
+#server_session = Session(app2)
 
 @app2.context_processor
 def inject_enumerate():
