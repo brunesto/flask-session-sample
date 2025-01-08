@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>sample session</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+
+
+  <span class="itemright">
+    {% for i,msg in enumerate(messages) %}
+    <h3>#{{ i }}</h3>
+    <div></div> {{ msg }}</div>
+    {% endfor %}
+  </span>
+  <form method="POST" action="/add">
+    <input name="new_message" type="text" name="message" />
+    <input type="submit" value="Add" />
+  </form>
+  <form method="POST" action="/clear">
+    <input type="submit" value="Clear" />
+  </form>
+</body>
+
+</html>
